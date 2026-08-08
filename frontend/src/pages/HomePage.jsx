@@ -5,6 +5,7 @@ import About from '../components/about/About';
 import Skills from '../components/skills/Skills';
 import Experience from '../components/experience/Experience';
 import Projects from '../components/projects/Projects';
+import UiUxDesigns from '../components/designs/UiUxDesigns';
 import Leadership from '../components/leadership/Leadership';
 import Education from '../components/education/Education';
 import Certifications from '../components/certifications/Certifications';
@@ -31,6 +32,7 @@ export const HomePage = () => {
         <Skills />
         <Experience />
         <Projects />
+        <UiUxDesigns />
         <Leadership />
         <Education />
         <Certifications />

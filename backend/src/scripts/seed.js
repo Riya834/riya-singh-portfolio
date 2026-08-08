@@ -11,6 +11,7 @@ const Education = require('../models/Education');
 const Certification = require('../models/Certification');
 const Leadership = require('../models/Leadership');
 const SiteSettings = require('../models/SiteSettings');
+const UiUxDesign = require('../models/UiUxDesign');
 
 const seedData = async () => {
   try {
@@ -26,6 +27,7 @@ const seedData = async () => {
     await Certification.deleteMany({});
     await Leadership.deleteMany({});
     await SiteSettings.deleteMany({});
+    await UiUxDesign.deleteMany({});
 
     console.log('[Seed] Seeding Admin user...');
     const adminEmail = process.env.ADMIN_EMAIL || 'riyarssingh22@gmail.com';
@@ -109,6 +111,20 @@ const seedData = async () => {
     console.log('[Seed] Seeding Experience data...');
     const experiences = [
       {
+        company: 'GDGC on Campus SVIET',
+        position: 'UI/UX Designer',
+        location: 'SVIET, Punjab',
+        startDate: 'Oct 2023',
+        endDate: 'Present',
+        description: [
+          'Led UI/UX design initiatives for GDGC on Campus SVIET, creating high-fidelity wireframes, interactive mobile/web prototypes, and design systems.',
+          'Designed community event dashboards, tech summit visual identities, and interactive developer interfaces.',
+          'Collaborated with cross-functional developer teams to convert user research into intuitive UI components and accessible digital products.'
+        ],
+        technologies: ['UI/UX Design', 'Figma', 'Wireframing', 'Prototyping', 'Design Systems', 'User Research', 'Adobe XD'],
+        order: 1
+      },
+      {
         company: 'Godigitify',
         position: 'Full Stack Developer | UI/UX Developer',
         location: 'Chandigarh, India',
@@ -120,7 +136,7 @@ const seedData = async () => {
           'Integrated REST APIs and improved system performance and reliability.'
         ],
         technologies: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'REST APIs', 'UI/UX Design'],
-        order: 1
+        order: 2
       },
       {
         company: 'Zepp Media',
@@ -134,10 +150,70 @@ const seedData = async () => {
           'Collaborated with backend teams for smooth data integration.'
         ],
         technologies: ['React.js', 'JavaScript', 'REST APIs', 'Data Rendering', 'CSS3'],
-        order: 2
+        order: 3
       }
     ];
     await Experience.insertMany(experiences);
+
+    console.log('[Seed] Seeding UI/UX Design Showcase data...');
+    const uiUxDesigns = [
+      {
+        title: 'BharatTech 2.0 Perience Hackathon Poster',
+        category: 'Event Poster & Branding',
+        client: 'GDGC on Campus SVIET',
+        description: 'Official event poster and community partner branding for BharatTech 2.0 Perience Hackathon with ₹1,00,000 prize pool, featuring sponsor integrations for Kwikpic, Devfolio, ETHIndia, and Polygon.',
+        image: '/designs/bharattech-hackathon.jpg',
+        tags: ['Figma', 'Event Poster', 'Branding', 'GDGC SVIET', 'Sponsor Identity'],
+        driveUrl: 'https://drive.google.com/drive/folders/1IElIpRNSVNimPxaBEPnocSWhCwZX1ahK?usp=drive_link',
+        featured: true,
+        order: 1
+      },
+      {
+        title: 'Google IDEATE Ideathon 2024 Poster',
+        category: 'Brand Promotion & Graphics',
+        client: 'The Uniques & GDGC SVIET',
+        description: 'Promotional graphic design for Google IDEATE Ideathon 2024 campus visit to CGC Jhanjheri, showcasing event roadmap and Google brand color palette.',
+        image: '/designs/google-ideathon.jpg',
+        tags: ['Brand Identity', 'Google Colors', 'Ideathon Poster', 'Graphics'],
+        driveUrl: 'https://drive.google.com/drive/folders/1IElIpRNSVNimPxaBEPnocSWhCwZX1ahK?usp=drive_link',
+        featured: true,
+        order: 2
+      },
+      {
+        title: 'Tapping into Web using Angular Banner',
+        category: 'Tech Workshop Graphics',
+        client: 'GDGC on Campus SVIET',
+        description: 'Event presentation design and social media announcement collateral for Tech Winter Break Angular workshop reaching over 115 total attendees.',
+        image: '/designs/angular-workshop.jpg',
+        tags: ['Angular Workshop', 'Social Media Design', 'GDGC SVIET', '115+ Attendees'],
+        driveUrl: 'https://drive.google.com/drive/folders/1IElIpRNSVNimPxaBEPnocSWhCwZX1ahK?usp=drive_link',
+        featured: true,
+        order: 3
+      },
+      {
+        title: 'Academic Test Conducted Banner',
+        category: 'Campus Media & Graphic Design',
+        client: 'The Uniques SVIET',
+        description: 'Custom hexagonal photo cutout graphic poster designed for Academic Test announcement across Uniques 1.0 and Uniques 2.0 student batches.',
+        image: '/designs/academic-test.jpg',
+        tags: ['Hexagonal Layout', 'Photoshop/Figma', 'Uniques SVIET', 'Academic Graphic'],
+        driveUrl: 'https://drive.google.com/drive/folders/1IElIpRNSVNimPxaBEPnocSWhCwZX1ahK?usp=drive_link',
+        featured: false,
+        order: 4
+      },
+      {
+        title: 'Unlocking Opportunities at SVGOI Brochure',
+        category: 'Marketing & Visual Design',
+        client: 'Swami Vivekanand Group of Institutes',
+        description: 'Institutional brochure layout and informational visual design highlighting SVGOI academic excellence, modern infrastructure, and student growth opportunities.',
+        image: '/designs/svgoi-brochure.jpg',
+        tags: ['Brochure Design', 'Print & Web Layout', 'Institutional Branding'],
+        driveUrl: 'https://drive.google.com/drive/folders/1IElIpRNSVNimPxaBEPnocSWhCwZX1ahK?usp=drive_link',
+        featured: false,
+        order: 5
+      }
+    ];
+    await UiUxDesign.insertMany(uiUxDesigns);
 
     console.log('[Seed] Seeding Projects data...');
     const projects = [

@@ -65,6 +65,11 @@ export const portfolioAPI = {
   updateLeadership: (id, data) => api.put(`/leadership/${id}`, data),
   deleteLeadership: (id) => api.delete(`/leadership/${id}`),
 
+  getDesigns: () => api.get('/designs'),
+  createDesign: (data) => api.post('/designs', data),
+  updateDesign: (id, data) => api.put(`/designs/${id}`, data),
+  deleteDesign: (id) => api.delete(`/designs/${id}`),
+
   getSettings: () => api.get('/settings'),
   updateSettings: (data) => api.put('/settings', data),
 
@@ -76,6 +81,15 @@ export const portfolioAPI = {
   getMessages: () => api.get('/admin/messages'),
   updateMessageStatus: (id, status) => api.put(`/admin/messages/${id}`, { status }),
   deleteMessage: (id) => api.delete(`/admin/messages/${id}`),
+};
+
+export const fetchDesigns = async () => {
+  try {
+    const res = await portfolioAPI.getDesigns();
+    return res.data || [];
+  } catch (err) {
+    return [];
+  }
 };
 
 export default api;

@@ -220,7 +220,7 @@ export const Hero = () => {
 
           <FloatingAPICard className="bottom-6 -right-4 sm:-right-10 hidden sm:flex z-20" />
 
-          <FloatingTerminalCard className="top-14 -right-10 xl:-right-24 hidden xl:block z-10" delay={0.9} />
+          <FloatingTerminalCard className="top-32 -right-4 lg:-right-12 xl:-right-16 hidden xl:block z-10" delay={0.9} />
 
         </motion.div>
       </div>
